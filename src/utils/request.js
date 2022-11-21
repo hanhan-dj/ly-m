@@ -2,7 +2,7 @@
 import axios from 'axios'
 
 const request = axios.create({
-  baseURL: 'http://ttapi.research.itcast.cn/' // 接口的基准路径
+  baseURL: 'http://geek.itheima.net/v1_0/authorizations' // 接口的基准路径
 })
 
 // 请求拦截器
