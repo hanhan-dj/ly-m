@@ -1,7 +1,16 @@
 <template>
     <div class="login-container">
       <!-- 导航栏 -->
-      <van-nav-bar class="page-nav-bar" title="登录"/>
+      <van-nav-bar
+        class="page-nav-bar"
+        title="登录"
+      >
+        <van-icon
+          slot="left"
+          name="cross"
+          @click="$router.back()"
+          />
+      </van-nav-bar>
       <!-- 导航栏 -->
       <!-- 登录表单 -->
       <!--
@@ -99,7 +108,6 @@ export default {
   methods: {
     async onSubmit () { //  发请求：async
       //  1.获取表单数据
-      const user = this.user
       //  2.表单验证
       //  在组件中必须通过this.$toast来调用Toast组件
       this.$toast.loading({
@@ -110,9 +118,12 @@ export default {
 
       //  3.请求表单登录
       try {
-        const res = await login(user)
-        console.log('登录成功', res)
+        const { data } = await login(this.user)
+        this.$store.commit('setUser', data.data)//  访问到data里面的token和refresh_token，存到这个容器里
         this.$toast.success('登录成功') //  有任何一个新的toast调用时，都会把之前的toast关闭
+        // 登陆成功，跳转回原来页面
+        // back 方式不严谨（目前没想到怎么优化）
+        this.$router.back()
       } catch (err) {
         if (err.response.status === 400) {
           this.$toast.fail('手机号或验证码错误')

@@ -20,7 +20,7 @@ export const login = data => {
 export const sendSms = mobile => {
   return request({
     method: 'GET',
-    // 这个接口已经不能用了
+    // 这个接口已经不能用了(后台没充钱)
     url: `/v1_0/sms/codes/${mobile}`
   })
 }
