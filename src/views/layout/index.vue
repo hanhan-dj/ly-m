@@ -13,7 +13,7 @@
           <span class="text">首页</span>
         </van-tabbar-item>
         <van-tabbar-item to="/buy">
-          <i slot="icon" class="iconfont icon-yuedu"></i>
+          <i slot="icon"><van-icon name="bag-o" /></i>
           <span class="text">已购</span>
         </van-tabbar-item>
         <van-tabbar-item to="/video">
