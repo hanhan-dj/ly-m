@@ -19,7 +19,10 @@
           通过 swipeable 属性可以开启滑动切换标签页 -->
 
     <van-tabs class="channel-tabs" v-model="active" swipeable>
-      <van-tab title="推荐" name="a">此页是推荐内容</van-tab>
+      <van-tab title="推荐" name="a">
+        <!-- 文章列表 -->
+      <!-- <ArticleList /> -->
+      </van-tab>
       <van-tab title="海外" name="b">内容 2</van-tab>
       <van-tab title="白噪音" name="c">内容 3</van-tab>
       <van-tab title="asmr" name="d">内容 3</van-tab>
@@ -42,9 +45,12 @@
   </div>
 </template>
 <script>
+// import ArticleList from './components/aritcle-list.vue'
 export default {
   name: 'HomeIndex',
-  components: {},
+  components: {
+    // ArticleList
+  },
   props: {},
   data () {
     return {

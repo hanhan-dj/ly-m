@@ -11,13 +11,13 @@ const routes = [
     component: () => import('@/views/login')
   },
   {
-    path: '/',
-    name: 'layout',
+    path: '',
+    // name: 'layout', // 如果父路由有默认子路由，那它的 name 没有意义
     component: () => import('@/views/layout'),
     children: [
       {
-        path: '', //  默认路由，只能有一个
-        // name: 'name', //  如果父路由有默认子路由，那它的name没有意义
+        path: '/home', // 默认子路由，只能有1个
+        name: 'home',
         component: () => import('@/views/home')
       },
       {
@@ -34,6 +34,11 @@ const routes = [
         path: '/my',
         name: 'my',
         component: () => import('@/views/my')
+      },
+      {
+        path: 'user/Profile',
+        name: 'user-profile',
+        component: () => import('@/views/user-profile')
       }
     ]
   }
