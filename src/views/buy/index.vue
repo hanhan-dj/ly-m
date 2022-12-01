@@ -1,10 +1,12 @@
 <template>
     <div class="buy-container">
+      <van-sticky>
       <van-nav-bar
         class="page-nav-bar"
         title="定制"
       >
-    </van-nav-bar>
+      </van-nav-bar>
+      </van-sticky>
       <van-swipe class="my-swipe" :autoplay="3000" indicator-color="white">
         <van-swipe-item>本期活动</van-swipe-item>
         <van-swipe-item>限时贩售</van-swipe-item>

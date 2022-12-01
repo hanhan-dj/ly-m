@@ -10,9 +10,14 @@ import 'vant/lib/index.css'
 import './styles/index.less'
 // 加载动态设置REM基准值
 import 'amfe-flexible'
-
+// // 加载echarts
+// import 'echarts'
+// import ECharts from 'vue-echarts'
 // 注册使用Vant组件库
 Vue.use(Vant)
+
+// // 全局注册组件（也可以使用局部注册）
+// Vue.component('v-chart', ECharts)
 
 Vue.config.productionTip = false
 
